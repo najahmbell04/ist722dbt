@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_sales
+    description: One big table combining fact_sales with all related dimensions. One row per line item with full dimensional context including product.
