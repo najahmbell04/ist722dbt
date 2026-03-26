@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_category
+    description: One row per item category.
+    columns:
+      - name: category_key
+        description: surrogate key
+        data_type: int
+        tests:
+          - unique
+          - not_null
+
+      - name: category_name
+        description: department or genre name
+        data_type: varchar
+        tests:
+          - unique
+          - not_null
+
+      - name: category_type_key
+        description: FK to dim_category_type
+        data_type: int
+        tests:
+          - not_null

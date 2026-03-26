@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: fact_item_rating
+    description: One row per customer rating event for a product or streaming title.
+    columns:
+      - name: rating_id
+        description: Source rating identifier
+        data_type: varchar
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_key
+        description: FK to dim_customer
+        data_type: int
+        tests:
+          - not_null
+
+      - name: item_key
+        description: FK to dim_item
+        data_type: int
+        tests:
+          - not_null
+
+      - name: category_key
+        description: FK to dim_category
+        data_type: int
+        tests:
+          - not_null
+
+      - name: item_type_key
+        description: FK to dim_item_type
+        data_type: int
+        tests:
+          - not_null
+
+      - name: date_key
+        description: FK to dim_date
+        data_type: int
+        tests:
+          - not_null
+
+      - name: rating_value
+        description: Numeric rating score given by customer
+        data_type: decimal
+        tests:
+          - not_null
+
+      - name: rating_count
+        description: Count of rating event, always 1
+        data_type: int
+        tests:
+          - not_null

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_item_type
+    description: One row per item type (product or streaming_title)
+    columns:
+      - name: item_type_key
+        description: surrogate key for the item type
+        data_type: int
+        tests:
+          - unique
+          - not_null
+
+      - name: item_type
+        description: name of the item type
+        data_type: varchar
+        tests:
+          - unique
+          - not_null

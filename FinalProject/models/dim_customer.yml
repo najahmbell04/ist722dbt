@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: One row per customer
+    columns:
+      - name: customer_key
+        description: surrogate dimension key
+        data_type: int
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: business key from source
+        data_type: varchar
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: customer name
+        data_type: varchar
+
+      - name: customer_email
+        description: email address
+        data_type: varchar
+
+      - name: customer_segment
+        description: segment if available
+        data_type: varchar
+
+      - name: source_system
+        description: FudgeMart or FudgeFlix
+        data_type: varchar
+        tests:
+          - not_null

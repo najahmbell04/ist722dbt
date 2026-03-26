@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: raw
+    schema: conformed
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+      - name: datedimension  
+  - name: fudgemart
+    database: raw
+    schema: fudgemart_v3
+    tables:
+      - name: fm_customers
+      - name: fm_products
+      - name: fm_customer_product_reviews
+      - name: fm_orders
+      - name: fm_order_details
+      - name: fm_vendors
+
+  - name: fudgeflix
+    database: raw
+    schema: fudgeflix_v3
+    tables:
+      - name: ff_accounts
+      - name: ff_titles
+      - name: ff_title_genres
+      - name: ff_genres
+      - name: ff_account_titles
+
