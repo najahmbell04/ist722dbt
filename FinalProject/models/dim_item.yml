@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: dim_item
+    description: One row per rated item (product or title).
+    columns:
+      - name: item_key
+        description: surrogate dimension key
+        data_type: varchar
+        tests:
+          - unique
+          - not_null
+
+      - name: item_id
+        description: business key
+        data_type: varchar
+        tests:
+          - unique
+          - not_null
+
+      - name: item_name
+        description: product name or title name
+        data_type: varchar
+        tests:
+          - not_null
+
+      - name: item_description
+        description: description
+        data_type: varchar
+
+      - name: item_type_key
+        description: FK to dim_item_type
+        data_type: int
+        tests:
+          - not_null
+
+      - name: category_key
+        description: FK to dim_category
+        data_type: int
+        tests:
+          - not_null
+
+      - name: source_system
+        description: FudgeMart/FudgeFlix
+        data_type: varchar
+        tests:
+          - not_null 
+  

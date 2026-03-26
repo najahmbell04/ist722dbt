@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_category_type
+    description: Distinguishes department vs genre.
+    columns:
+      - name: category_type_key
+        description: surrogate key
+        data_type: int
+        tests:
+          - unique
+          - not_null
+
+      - name: category_type_name
+        description: Department or Genre
+        data_type: varchar
+        tests:
+          - unique
+          - not_null
